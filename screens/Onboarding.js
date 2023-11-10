@@ -9,6 +9,7 @@ import {
 } from "react-native";
 
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { LoggedInContext } from "../context/logged-in-context";
 
 function validateName(text) {
   return /^[a-zA-Z]+$/.test(text);
@@ -18,12 +19,14 @@ function validateEmail(email) {
   return /^[\w-\.]+@([\w-]+\.)+[\w-]+$/.test(email);
 }
 
-function Onboarding() {
+function Onboarding({ navigation }) {
   const [name, setName] = React.useState("");
   const [validName, setValidName] = React.useState(false);
 
   const [email, setEmail] = React.useState("");
   const [validEmail, setValidEmail] = React.useState(false);
+
+  const { onboarded, setOnboarded } = React.useContext(LoggedInContext);
 
   const onboard = async () => {
     try {
@@ -37,6 +40,7 @@ function Onboarding() {
         "user-info",
         JSON.stringify({ name: name, email: email })
       );
+      setOnboarded(true);
     } catch (e) {}
   };
 

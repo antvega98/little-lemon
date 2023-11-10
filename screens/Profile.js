@@ -200,7 +200,7 @@ const Profile = ({ route }) => {
   return (
     <View style={{ flex: 1 }}>
       <View style={styles.header}>
-        <Text>Back</Text>
+        {/* <Text>Back</Text> */}
         <Image
           source={require("../assets/Logo.png")}
           style={{
@@ -216,7 +216,7 @@ const Profile = ({ route }) => {
             style={{ width: 50, height: 50, borderRadius: 16 }}
           ></Image>
         ) : (
-          <Text>Profile Picture</Text>
+          <Text>Picture</Text>
         )}
         {/* <Text>Profile Picture</Text> */}
       </View>
@@ -284,7 +284,7 @@ const Profile = ({ route }) => {
           <Text>Phone number</Text>
           <TextInput
             style={styles.textInput}
-            keyboardType="phone-pad"
+            // keyboardType="phone-pad"
             maxLength={10}
             defaultValue={phoneNumber}
             onChangeText={(newNumber) => {
@@ -396,7 +396,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     flexDirection: "row",
-    marginTop: 40,
+    // marginTop: 40,
   },
   subheader: {
     flex: 1,

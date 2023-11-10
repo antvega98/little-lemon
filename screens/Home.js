@@ -162,7 +162,7 @@ const Home = ({ navigation }) => {
   };
 
   return (
-    <View style={{ flex: 1 }}>
+    <View style={{ flex: 1, marginTop: 40 }}>
       <View style={styles.header}>
         <Image
           source={require("../assets/Logo.png")}
@@ -177,7 +177,7 @@ const Home = ({ navigation }) => {
             navigation.push("Profile");
           }}
         >
-          <Text style={{ fontSize: 18 }}>Profile</Text>
+          <Text style={{ fontSize: 18, color: "grey" }}>Profile</Text>
         </Pressable>
       </View>
       <View
@@ -290,8 +290,8 @@ const styles = StyleSheet.create({
     height: 75,
     width: 200,
     resizeMode: "contain",
-    borderWidth: 1,
-    borderColor: "red",
+    // borderWidth: 1,
+    // borderColor: "red",
   },
   profileButton: {
     padding: 10,
