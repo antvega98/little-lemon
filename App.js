@@ -3,6 +3,7 @@ import * as React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import Onboarding from "./screens/Onboarding.js";
 import Profile from "./screens/Profile.js";
+import Home from "./screens/Home.js";
 
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -55,15 +56,20 @@ export default function App() {
               component={Onboarding}
             />
           ) : (
-            <Stack.Screen
-              options={{ headerShown: false }}
-              name="Profile"
-              component={Profile}
-              // options={({ navigation }) => ({
-              //   headerShown: false,
-              //   logoutFunction: () => console.log("LOGOUT FROM PARAM FUNCTION"),
-              // })}
-            />
+            <>
+              <Stack.Screen name="Home" component={Home} />
+              <Stack.Screen
+                options={{ headerShown: false }}
+                name="Profile"
+                component={Profile}
+              />
+            </>
+
+            // options={({ navigation }) => ({
+            //   headerShown: false,
+            //   logoutFunction: () => console.log("LOGOUT FROM PARAM FUNCTION"),
+            // })}
+            ///>
           )}
         </Stack.Navigator>
       </NavigationContainer>
