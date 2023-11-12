@@ -9,6 +9,7 @@ import {
   Pressable,
   TextInput,
   Button,
+  Alert,
 } from "react-native";
 
 import Checkbox from "expo-checkbox";
@@ -152,8 +153,13 @@ const Profile = ({ route }) => {
           await AsyncStorage.setItem("profile-picture", image);
           setButtonName("Change");
         }
+        Alert.alert("Information Saved", "");
       } else {
         console.log("An input field is invalid. Not saving data.");
+        Alert.alert(
+          "Invalid Input",
+          "Please enter a valid first name, last name, email, and phone number."
+        );
       }
     } catch (e) {
       console.log("Unable to save text input fields.");
